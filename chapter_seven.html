@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="arraytest"></div>
+    <script>
+      function makeUnorderedList(array) {
+        if (!Array.isArray(array)) {
+          array = ["You didn't pass an array."];
+        }
+        let listItems = array.map(function (element) {
+          return `<li>${element}</li>`;
+        });
+        return `<ul>${listItems.join("")}</ul>`;
+      }
+
+      let schedule = ["Wake Up", "Brush Teeth", "Eat Breakfast", "Get To Work"];
+
+      myList = makeUnorderedList(schedule);
+
+      document.getElementById("arraytest").innerHTML = myList;
+    </script>
+  </body>
+</html>
